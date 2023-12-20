@@ -129,9 +129,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AssaultCubeExternal.cpp" />
+    <ClCompile Include="memory.cpp" />
     <ClCompile Include="proc.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="memory.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="proc.h" />
   </ItemGroup>
