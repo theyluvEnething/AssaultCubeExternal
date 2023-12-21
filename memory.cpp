@@ -7,6 +7,8 @@ DWORD baseAddress;
 void memory::setHWDN(HWND* _hwnd) { hwnd = *_hwnd; }
 void memory::setpHandle(HANDLE* _pHandle) { pHandle = *_pHandle; }
 void memory::setBaseAddress(DWORD _baseAddress) { baseAddress = _baseAddress; }
+
+
 DWORD memory::ResolvePointerChain(DWORD offset, std::vector<DWORD> offsets) {
 	if (!hwnd || !pHandle) {
 		std::cout << "HWND or pHandle not initialized." << std::endl;
@@ -30,4 +32,8 @@ void memory::write(DWORD offset, std::vector<DWORD> offsets, void* value, size_t
 void memory::read(DWORD offset, std::vector<DWORD> offsets, void* output, size_t size) {
 	DWORD address = ResolvePointerChain(offset, offsets);
 	ReadProcessMemory(pHandle, (LPVOID*)(address), output, size, 0);
+}
+
+void memory::read(DWORD offset, void* output, size_t size) {
+	ReadProcessMemory(pHandle, (LPVOID*)(baseAddress + offset), output, size, 0);
 }

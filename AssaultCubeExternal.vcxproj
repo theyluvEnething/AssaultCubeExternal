@@ -133,7 +133,9 @@
     <ClCompile Include="proc.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="data.h" />
     <ClInclude Include="memory.h" />
+    <ClInclude Include="offsets.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="proc.h" />
   </ItemGroup>
