@@ -2,7 +2,7 @@
 #include <Windows.h>
 #include <iostream>
 #include <vector>
-#include "proc.h"
+#include "../proc/proc.h"
 
 extern HWND hwnd;
 extern HANDLE pHandle;
@@ -18,6 +18,8 @@ public:
 	static void setHWDN(HWND* _hwnd);
 	static void setpHandle(HANDLE* _pHandle);
 	static void setBaseAddress(DWORD _baseAddress);
+	static HANDLE getpHandle();
+	static HWND getHWND();
 private:
 	static DWORD ResolvePointerChain(DWORD offset, std::vector<DWORD> offsets);
 };

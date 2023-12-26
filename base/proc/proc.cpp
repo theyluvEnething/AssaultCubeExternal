@@ -1,5 +1,5 @@
 #include "proc.h"
-#include "stdafx.h"
+#include "../stdafx.h"
 #include <wchar.h>
 #include <vector>
 #include <Windows.h>

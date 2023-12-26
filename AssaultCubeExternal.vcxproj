@@ -18,6 +18,24 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="base\AssaultCubeExternal.cpp" />
+    <ClCompile Include="base\memory\memory.cpp" />
+    <ClCompile Include="base\proc\proc.cpp" />
+    <ClCompile Include="base\gui\window.cpp" />
+    <ClCompile Include="base\cheat\cheat.cpp" />
+    <ClCompile Include="base\utils\math.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="base\data\offsets.h" />
+    <ClInclude Include="base\memory\memory.h" />
+    <ClInclude Include="base\proc\proc.h" />
+    <ClInclude Include="base\stdafx.h" />
+    <ClInclude Include="base\gui\window.h" />
+    <ClInclude Include="base\cheat\cheat.h" />
+    <ClInclude Include="base\utils\utils.h" />
+    <ClInclude Include="base\utils\math.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -125,20 +143,10 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="AssaultCubeExternal.cpp" />
-    <ClCompile Include="memory.cpp" />
-    <ClCompile Include="proc.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="data.h" />
-    <ClInclude Include="memory.h" />
-    <ClInclude Include="offsets.h" />
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="proc.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
