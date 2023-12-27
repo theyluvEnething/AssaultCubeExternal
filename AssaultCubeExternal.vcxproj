@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="base\AssaultCubeExternal.cpp" />
+    <ClCompile Include="base\data\entity.cpp" />
     <ClCompile Include="base\memory\memory.cpp" />
     <ClCompile Include="base\proc\proc.cpp" />
     <ClCompile Include="base\gui\window.cpp" />
@@ -27,6 +28,7 @@
     <ClCompile Include="base\utils\math.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="base\data\entity.h" />
     <ClInclude Include="base\data\offsets.h" />
     <ClInclude Include="base\memory\memory.h" />
     <ClInclude Include="base\proc\proc.h" />

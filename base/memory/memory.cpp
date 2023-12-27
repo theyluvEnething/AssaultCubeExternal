@@ -19,8 +19,6 @@ DWORD memory::ResolvePointerChain(DWORD offset, std::vector<DWORD> offsets) {
 	DWORD address = NULL;
 	ReadProcessMemory(pHandle, (LPVOID*)(baseAddress + offset), &address, sizeof(address), 0);
 
-	
-
 	for (int i = 0; i < offsets.size() - 1; i++) {
 		ReadProcessMemory(pHandle, (LPVOID*)(address + offsets[i]), &address, sizeof(address), 0);
 	}
@@ -37,6 +35,6 @@ void memory::read(DWORD offset, std::vector<DWORD> offsets, void* output, size_t
 	ReadProcessMemory(pHandle, (LPVOID*)(address), output, size, 0);
 }
 
-void memory::read(DWORD offset, void* output, size_t size) {
-	ReadProcessMemory(pHandle, (LPVOID*)(baseAddress + offset), output, size, 0);
+void memory::read(DWORD address, void* output, size_t size) {
+	ReadProcessMemory(pHandle, (LPVOID*)(address), output, size, 0);
 }

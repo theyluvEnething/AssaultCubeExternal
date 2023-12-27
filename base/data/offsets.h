@@ -22,5 +22,11 @@ namespace offset {
 	const DWORD entityPosY = 0x8; // west-ost
 	const DWORD entityPosZ = 0xC; // height
 
-	const DWORD entityListLength = 0x18AC0C; // length of entity list
+	// ac_client.exe+18AC0C -> 0058AC0C
+	const DWORD uEntityCount = 0x0058AC0C; // length of entity list 
+
+	const DWORD iViewMatrix = 0x57DFD0;
+
+	const DWORD iGameWidth = 0x591ED8;
+	const DWORD iGameHeight = 0x591EDC;
 }

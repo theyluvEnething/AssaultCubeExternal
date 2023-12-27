@@ -42,10 +42,9 @@ int main(void*)
 
     while (true) 
     {
-
-
-
         cheat::present();
+
+        cheat::esp();
 
         window::draw_rectangle(vec2i(20, 20), vec2i(50, 50), window::BRUSH_RED);
 

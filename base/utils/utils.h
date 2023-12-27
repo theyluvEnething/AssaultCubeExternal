@@ -8,7 +8,15 @@ typedef double f64;
 
 
 typedef struct vector2 { f32 x; f32 y; } v2;
-typedef struct vector2i { int x; int y; } v2i;
+typedef struct vector2i 
+{ 
+    int x; int y; 
+
+    explicit vector2i(vector2 vec) : x(vec.x), y(vec.y) {}
+    explicit vector2i(int _x, int _y) : x(_x), y(_y) {}
+
+} v2i;
+
 #define vec2(x, y) v2{(f32)x, (f32)y}
 #define vec2i(x, y) v2i{(int)x, (int)y}
 
@@ -17,11 +25,9 @@ typedef struct vector3i { int x; int y; int z; } v3i;
 #define vec3(x, y, z) v3{(f32)x, (f32)y, (f32)z}
 #define vec3i(x, y, z) v3i{(int)x, (int)y, (int)z}
 
-typedef struct entity {
-    vector3 pos;
-    int health;
-    char name[64];
-};
+typedef struct vector4 { f32 x; f32 y; f32 z; f32 w; } v4;
+typedef struct vector4i { int x; int y; int z; int w; } v4i;
+
 
 #define ANSI_COLOR_RED     "\x1b[31m"
 #define ANSI_COLOR_GREEN   "\x1b[32m"
