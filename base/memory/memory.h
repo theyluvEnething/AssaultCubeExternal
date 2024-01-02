@@ -12,6 +12,7 @@ class memory
 {
 public:
 	static void write(DWORD offset, std::vector<DWORD> offsets, void* input, size_t size);
+	static void write(DWORD address, void* value, size_t size);
 	static void read(DWORD offset, std::vector<DWORD> offsets, void* output, size_t size);
 	static void read(DWORD offset, void* output, size_t size); // read directly
 	

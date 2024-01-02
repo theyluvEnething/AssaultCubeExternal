@@ -18,45 +18,44 @@
 #include "utils/utils.h"
 
 void init();
+void out();
+
+struct Screen screen;
 
 int main(void*)
 {
     init();
-
     cheat::hook();
     cheat::setup();
 
-    //HWND hwnd = memory::getHWND();
-    //HANDLE pHandle = memory::getpHandle();
-
-    
-    bool running = true;
-
-    //CreateExternalWindow(memory::getHWND());
-
     window::create(memory::getHWND());
 
-    
 
-    
-
-    while (true) 
-    {
+    for (;;) 
+    {        
         cheat::present();
 
         cheat::esp();
+        cheat::aimbot();
 
-        window::draw_rectangle(vec2i(20, 20), vec2i(50, 50), window::BRUSH_RED);
-
+        window::draw_rectangle(vec2i(20, 20), vec2i(20, 20), window::BRUSH_RED);
+        window::update();
     }
 
-    std::cout << std::endl << "Closing Window!" << std::endl;
+
+    out();
     return 0;
 }
 
 
 void init() {
-    std::cout << "========================================================================="                                                           << "\n";
-    std::cout << "========================= " << ANSI_COLOR_MAGENTA << "ASSSAULT CUBE EXTERNAL "    << ANSI_COLOR_RESET << "======================== " << "\n";
-    std::cout << "========================================================================="                                                           << "\n\n";
+    std::cout << "========================================================================="                                                        << "\n";
+    std::cout << "========================= " << ANSI_COLOR_MAGENTA << "ASSSAULT CUBE EXTERNAL" << ANSI_COLOR_RESET << " ======================== " << "\n";
+    std::cout << "========================================================================="                                                        << "\n" << std::endl;
+}
+
+void out() {
+    std::cout << "=========================================================================" << "\n";
+    std::cout << "========================= " << ANSI_COLOR_MAGENTA << "CLOSING WINDOW" << ANSI_COLOR_RESET << "======================== " << "\n";
+    std::cout << "=========================================================================" << std::endl;
 }

@@ -4,7 +4,8 @@
 
 typedef struct entity {
 	f32 view_matrix[16];
-	vector3 pos;
+	v3 pos;
+	v2 viewangle;
 
 	int ammo;
 	int health;
@@ -12,4 +13,7 @@ typedef struct entity {
 
 	void print();
 	void print_angles();
+	void print_important();
+
+	entity() : view_matrix{}, pos{0, 0, 0}, viewangle{0, 0}, ammo(0), health(0), name{""} {}
 };

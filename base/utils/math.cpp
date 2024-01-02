@@ -1,9 +1,10 @@
 #include "math.h"
+#include "utils.h"
 #include <iostream>
 
 
 // [x_s, y_s] = ProjectionMatrix * ViewMatrix * ModelMatrix * [x_w, y_w, z_w, 1]
-v2i math::WorldToScreen(v3 pos, float matrix[16], struct Screen window)
+v2i math::WorldToScreen(v3 pos, float matrix[16])
 {
 	// convert world space into clip space
 	v4 clip_space = {
@@ -26,36 +27,24 @@ v2i math::WorldToScreen(v3 pos, float matrix[16], struct Screen window)
 
 	// conver ndc to screen coordinates
 	v2 screen_coords = {
-		((window.width   / 2) * NDC.x) + (NDC.x + window.width/2),
-		((-window.height / 2) * NDC.y) + (NDC.y + window.height/2),
+		((screen.width   / 2) * NDC.x) + (NDC.x + screen.width/2),
+		((-screen.height / 2) * NDC.y) + (NDC.y + screen.height/2),
 	};
-
-	/*
-	
-	MyMaths::screen.x = (width / 2 * NDC.x) + (NDC.x + width / 2);
-	MyMaths::screen.y = -(height / 2 * NDC.y) + (NDC.y + height / 2);
-	
-	*/
-
-
-
 
 	return (v2i)screen_coords;
 }
 
 f32 math::distance(v2 a, v2 b) 
 {
-
-
+	return (f32)sqrt((b.x-a.x)*(b.x-a.x) + (b.y-a.y)*(b.y-a.y));
 }
 
 f32 math::distance(v3 a, v3 b) 
 {
-
-
+	return (f32)sqrt((b.x-a.x)*(b.x-a.x) + (b.y-a.y)*(b.y-a.y) + (b.z-a.z)*(b.z-a.z));
 }
 
 v3 math::CalculateAngles(v3 pPos, v3 ePos) 
 {
-
+	return v3{ 0, 0, 0 };
 }

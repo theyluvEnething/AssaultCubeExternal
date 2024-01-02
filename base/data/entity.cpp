@@ -15,6 +15,12 @@ void entity::print() {
 	std::cout << "=============================\n" << std::endl;
 }
 
+void entity::print_important() {
+	std::cout << this->name << ": [" << this->pos.x << ", " << this->pos.y << ", " << this->pos.z << "] - "
+		<< "(" << this->health << " | " << this->ammo << ")"
+		<< std::endl;
+}
+
 void entity::print_angles() {
 	std::cout << std::fixed << std::setprecision(2);
 	for (int i = 0; i < 16; i++) {

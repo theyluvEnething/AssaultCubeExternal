@@ -30,6 +30,10 @@ void memory::write(DWORD offset, std::vector<DWORD> offsets, void* value, size_t
 	WriteProcessMemory(pHandle, (LPVOID*)address, value, size, 0);
 }
 
+void memory::write(DWORD address, void* value, size_t size) {
+	WriteProcessMemory(pHandle, (LPVOID*)(baseAddress+address), value, size, 0);
+}
+
 void memory::read(DWORD offset, std::vector<DWORD> offsets, void* output, size_t size) {
 	DWORD address = ResolvePointerChain(offset, offsets);
 	ReadProcessMemory(pHandle, (LPVOID*)(address), output, size, 0);
