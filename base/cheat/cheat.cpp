@@ -19,8 +19,6 @@ uint32_t cheat::box_size = 2400;
 f32 cheat::FOV = 90;
 
 
-
-
 int cheat::hook() {
     std::cout << "Hooking cheat..." << std::endl;
 
@@ -113,6 +111,10 @@ int cheat::present() {
 void cheat::esp()
 {
     for (entity e : entityArr) {
+
+        if (e.health < 0 || e.health > 300)
+            continue;
+
         v2i coordinates = math::WorldToScreen(e.pos, cheat::player.view_matrix);
 
         if (coordinates.x == -1 && coordinates.y == -1)
@@ -136,6 +138,10 @@ void cheat::aimbot()
 
 
     for (entity e : entityArr) {
+
+        if (e.health < 0 || e.health > 300)
+            continue;
+
         f32 dist = math::distance(e.pos, cheat::player.pos);
 
 
@@ -175,6 +181,7 @@ std::vector<entity> cheat::getEntityArr() {
 
         ent.push_back(e);
     }
+
 
     return ent;
 }
